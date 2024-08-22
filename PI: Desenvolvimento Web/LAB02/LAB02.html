@@ -3,68 +3,286 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<header>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab02 PI - Desenvolvimento de sistemas web</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
     <h1>Lab02 PI - Desenvolvimento de sistemas web</h1>
     <h2>Este site é para falar sobre as olimpiadas de LOS Angeles que ocorrera em 2028.</h2>
-    <p>Acabou de passar as olimpiadas de Paris (2024), entretanto na cerimonia de encerramento do evento foi ilustrado
+    <p>Acabou de passar as olimpiadas de Paris (2024), entretanto na cerimonia de encerramento do evento foi
+        ilustrado
         um teaser dos proximos jogos olimpicos que será em LA (Los Angeles - EUA).</p>
-    <div class="audio-player">
-        <audio id="RHCP2028" src="Cant_stop.mp3" controls autoplay></audio></br>
+    <!--link rel="stylesheet" href="styles.css"-->
+    <style>
+        /* PI - Desenvolvimento de sistemas web LAB02 */
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 0;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .content {
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Esconde o checkbox */
+        .theme-toggle-checkbox {
+            display: none;
+        }
+
+        /* Estilos para o botão de troca de tema */
+        .theme-toggle-label {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #333;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        .theme-toggle-label:hover {
+            background-color: #333;
+        }
+
+        /* Estilos para o tema escuro */
+        .theme-toggle-checkbox:checked~.content {
+            background-color: #333;
+            color: white;
+        }
+
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            color: whitesmoke;
+            text-align: center;
+        }
+
+        .video-player {
+            display: block;
+            margin: 0 auto;
+            max-width: 800px;
+            width: 100%;
+            background: #000;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+
+        .audio-player {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #2c2c2c;
+            border: 1px solid #2c2c2c;
+            padding: 10px;
+            box-shadow: 0 4px 8px #2c2c2c;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+
+        audio {
+            width: 300px;
+        }
+
+        p {
+            font-size: 18px;
+            color: whitesmoke;
+            text-align: center;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .forms {
+            background-color: #3a3a3a;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            justify-items: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            justify-items: center;
+        }
+
+        label {
+            color: whitesmoke;
+            text-align: center;
+        }
+
+        ul {
+            color: whitesmoke;
+
+        }
+
+        ol {
+            color: whitesmoke;
+
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            border-color: #3498db;
+            outline: none;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3498db;
+            color: whitesmoke;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        a {
+            color: rgb(88, 88, 245);
+            text-decoration: none;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</header>
+
+<body>
+    <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox">
+    <label for="theme-toggle" class="theme-toggle-label">Mudar Tema</label>
+    <div class="content">
+        <main>
+            <div class="audio-player">
+                <audio id="RHCP2028" src="Cant_stop.mp3" controls autoplay></audio></br>
+            </div>
+            <img src="RHCP.png" alt="logo_olimpiadas_LA_2028">
+            <div class="video-player">
+                <iframe width="800" height="320" src="https://www.youtube.com/embed/CY8l5S3mVsg?si=Zs2danJ-mrEeC05r"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <h3>Esses sao alguns esportes nos quais tem nas olimpiadas em lista desordenadas</h3>
+            <ul id="Modalidades_desordenadas">
+                <li class="item1"><a href="https://pt.wikipedia.org/wiki/Atletismo"><b><i>Atletismo</i></b></a></li>
+                <li class="item2"><a href="https://pt.wikipedia.org/wiki/badminton"><b><i>badminton</i></b></a></li>
+                <li class="item3"><a href="https://pt.wikipedia.org/wiki/Basquete"><b><i>Basquete</i></b></a></li>
+                <li class="item4"><a href="https://pt.wikipedia.org/wiki/Basquete3x3"><b><i>Basquete 3x3</i></b></a>
+                </li>
+                <li class="item5"><a href="https://pt.wikipedia.org/wiki/Boxe"><b><i>Boxe</i></b></a></li>
+                <li class="item6"><a href="https://pt.wikipedia.org/wiki/breaking"><b><i>breaking</i></b></a></li>
+                <li class="item7"><a href="https://pt.wikipedia.org/wiki/Canoagem velocidade"><b><i>Canoagem de
+                                Velocidade</i></b></a></li>
+                <li class="item8"><a href="https://pt.wikipedia.org/wiki/Canoagem slalom"><b><i>Canoagem
+                                slalom</i></b></a></li>
+                <li class="item9"><a href="https://pt.wikipedia.org/wiki/BMX"><b><i>Ciclismo BMX Racing</i></b></a></li>
+                <li class="item10"><a href="https://pt.wikipedia.org/wiki/Ciclismo_de_estrada"><b><i>Ciclismo de
+                                estrada</i></b></a></li>
+                <li class="item11"><a href="https://pt.wikipedia.org/wiki/Ciclismo_de_pista"><b><i>Ciclismo de
+                                pista</i></b></a>
+                </li>
+                <li class="item12"><a href="https://pt.wikipedia.org/wiki/Escalada"><b><i>Escalada</i></b></a></li>
+                <li class="item13"><a href="https://pt.wikipedia.org/wiki/Esgrima"><b><i>Esgrima</i></b></a></li>
+                <li class="item14"><a href="https://pt.wikipedia.org/wiki/Futebol"><b><i>Futebol</i></b></a></li>
+                <li class="item15"><a href="https://pt.wikipedia.org/wiki/Natacao"><b><i>Natacao</i></b></a></li>
+                <li class="item16"><a href="https://pt.wikipedia.org/wiki/Volei"><b><i>Volei</i></b></a></li>
+                <li class="item17"><a href="https://pt.wikipedia.org/wiki/Tiro ao alvo"><b><i>Tiro ao alvo</i></b></a>
+                </li>
+            </ul>
+            <h3>Esses sao alguns esportes nos quais tem nas olimpiadas em lista Ordenadas</h3>
+            <ol id="Modalidades_ordenadas">
+                <li class="item1"><a href="https://pt.wikipedia.org/wiki/Atletismo"><b><i>Atletismo</i></b></a></li>
+                <li class="item2"><a href="https://pt.wikipedia.org/wiki/badminton"><b><i>badminton</i></b></a></li>
+                <li class="item3"><a href="https://pt.wikipedia.org/wiki/Basquete"><b><i>Basquete</i></b></a></li>
+                <li class="item4"><a href="https://pt.wikipedia.org/wiki/Basquete3x3"><b><i>Basquete 3x3</i></b></a>
+                </li>
+                <li class="item5"><a href="https://pt.wikipedia.org/wiki/Boxe"><b><i>Boxe</i></b></a></li>
+                <li class="item6"><a href="https://pt.wikipedia.org/wiki/breaking"><b><i>breaking</i></b></a></li>
+                <li class="item7"><a href="https://pt.wikipedia.org/wiki/Canoagem velocidade"><b><i>Canoagem de
+                                Velocidade</i></b></a></li>
+                <li class="item8"><a href="https://pt.wikipedia.org/wiki/Canoagem slalom"><b><i>Canoagem
+                                slalom</i></b></a></li>
+                <li class="item9"><a href="https://pt.wikipedia.org/wiki/BMX"><b><i>Ciclismo BMX Racing</i></b></a></li>
+                <li class="item10"><a href="https://pt.wikipedia.org/wiki/Ciclismo_de_estrada"><b><i>Ciclismo de
+                                estrada</i></b></a></li>
+                <li class="item11"><a href="https://pt.wikipedia.org/wiki/Ciclismo_de_pista"><b><i>Ciclismo de
+                                pista</i></b></a>
+                </li>
+                <li class="item12"><a href="https://pt.wikipedia.org/wiki/Escalada"><b><i>Escalada</i></b></a></li>
+                <li class="item13"><a href="https://pt.wikipedia.org/wiki/Esgrima"><b><i>Esgrima</i></b></a></li>
+                <li class="item14"><a href="https://pt.wikipedia.org/wiki/Futebol"><b><i>Futebol</i></b></a></li>
+                <li class="item15"><a href="https://pt.wikipedia.org/wiki/Natacao"><b><i>Natacao</i></b></a></li>
+                <li class="item16"><a href="https://pt.wikipedia.org/wiki/Volei"><b><i>Volei</i></b></a></li>
+                <li class="item17"><a href="https://pt.wikipedia.org/wiki/Tiro ao alvo"><b><i>Tiro ao alvo</i></b></a>
+                </li>
+            </ol>
+        </main>
     </div>
-    <img src="RHCP.png" alt="logo_olimpiadas_LA_2028">
-    <div class="video-player">
-        <iframe width="800" height="320" src="https://www.youtube.com/embed/CY8l5S3mVsg?si=Zs2danJ-mrEeC05r"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-    <h3>Esses sao alguns esportes nos quais tem nas olimpiadas em lista desordenadas</h3>
-    <ul id="Modalidades_desordenadas">
-        <li class="item1"><a href="https://pt.wikipedia.org/wiki/Atletismo"><b><i>Atletismo</i></b></a></li>
-        <li class="item2"><a href="https://pt.wikipedia.org/wiki/badminton"><b><i>badminton</i></b></a></li>
-        <li class="item3"><a href="https://pt.wikipedia.org/wiki/Basquete"><b><i>Basquete</i></b></a></li>
-        <li class="item4"><a href="https://pt.wikipedia.org/wiki/Basquete3x3"><b><i>Basquete 3x3</i></b></a></li>
-        <li class="item5"><a href="https://pt.wikipedia.org/wiki/Boxe"><b><i>Boxe</i></b></a></li>
-        <li class="item6"><a href="https://pt.wikipedia.org/wiki/breaking"><b><i>breaking</i></b></a></li>
-        <li class="item7"><a href="https://pt.wikipedia.org/wiki/Canoagem velocidade"><b><i>Canoagem de Velocidade</i></b></a></li>
-        <li class="item8"><a href="https://pt.wikipedia.org/wiki/Canoagem slalom"><b><i>Canoagem slalom</i></b></a></li>
-        <li class="item9"><a href="https://pt.wikipedia.org/wiki/BMX"><b><i>Ciclismo BMX Racing</i></b></a></li>
-        <li class="item10"><a href="https://pt.wikipedia.org/wiki/Ciclismo_de_estrada"><b><i>Ciclismo de estrada</i></b></a></li>
-        <li class="item11"><a href="https://pt.wikipedia.org/wiki/Ciclismo_de_pista"><b><i>Ciclismo de pista</i></b></a></li>
-        <li class="item12"><a href="https://pt.wikipedia.org/wiki/Escalada"><b><i>Escalada</i></b></a></li>
-        <li class="item13"><a href="https://pt.wikipedia.org/wiki/Esgrima"><b><i>Esgrima</i></b></a></li>
-        <li class="item14"><a href="https://pt.wikipedia.org/wiki/Futebol"><b><i>Futebol</i></b></a></li>
-        <li class="item15"><a href="https://pt.wikipedia.org/wiki/Natacao"><b><i>Natacao</i></b></a></li>
-        <li class="item16"><a href="https://pt.wikipedia.org/wiki/Volei"><b><i>Volei</i></b></a></li>
-        <li class="item17"><a href="https://pt.wikipedia.org/wiki/Tiro ao alvo"><b><i>Tiro ao alvo</i></b></a></li>
-    </ul>
-    <h3>Esses sao alguns esportes nos quais tem nas olimpiadas em lista Ordenadas</h3>
-    <ol id="Modalidades_ordenadas">
-        <li class="item1"><a href="https://pt.wikipedia.org/wiki/Atletismo"><b><i>Atletismo</i></b></a></li>
-        <li class="item2"><a href="https://pt.wikipedia.org/wiki/badminton"><b><i>badminton</i></b></a></li>
-        <li class="item3"><a href="https://pt.wikipedia.org/wiki/Basquete"><b><i>Basquete</i></b></a></li>
-        <li class="item4"><a href="https://pt.wikipedia.org/wiki/Basquete3x3"><b><i>Basquete 3x3</i></b></a></li>
-        <li class="item5"><a href="https://pt.wikipedia.org/wiki/Boxe"><b><i>Boxe</i></b></a></li>
-        <li class="item6"><a href="https://pt.wikipedia.org/wiki/breaking"><b><i>breaking</i></b></a></li>
-        <li class="item7"><a href="https://pt.wikipedia.org/wiki/Canoagem velocidade"><b><i>Canoagem de Velocidade</i></b></a></li>
-        <li class="item8"><a href="https://pt.wikipedia.org/wiki/Canoagem slalom"><b><i>Canoagem slalom</i></b></a></li>
-        <li class="item9"><a href="https://pt.wikipedia.org/wiki/BMX"><b><i>Ciclismo BMX Racing</i></b></a></li>
-        <li class="item10"><a href="https://pt.wikipedia.org/wiki/Ciclismo_de_estrada"><b><i>Ciclismo de estrada</i></b></a></li>
-        <li class="item11"><a href="https://pt.wikipedia.org/wiki/Ciclismo_de_pista"><b><i>Ciclismo de pista</i></b></a></li>
-        <li class="item12"><a href="https://pt.wikipedia.org/wiki/Escalada"><b><i>Escalada</i></b></a></li>
-        <li class="item13"><a href="https://pt.wikipedia.org/wiki/Esgrima"><b><i>Esgrima</i></b></a></li>
-        <li class="item14"><a href="https://pt.wikipedia.org/wiki/Futebol"><b><i>Futebol</i></b></a></li>
-        <li class="item15"><a href="https://pt.wikipedia.org/wiki/Natacao"><b><i>Natacao</i></b></a></li>
-        <li class="item16"><a href="https://pt.wikipedia.org/wiki/Volei"><b><i>Volei</i></b></a></li>
-        <li class="item17"><a href="https://pt.wikipedia.org/wiki/Tiro ao alvo"><b><i>Tiro ao alvo</i></b></a></li>
-    </ol>
+</body>
+
+<footer>
     <h2>Deseja receber e-mails com as nossas novidades??</h2>
     <p>Preencha o formulario a seguir: </p>
     <div class="forms">
@@ -80,9 +298,6 @@
         </div>
         </form>
     </div>
-
-</body>
-<footer>
     <svg id="Logo_olimpiadas" width="full" height="500" text-anchor="middle">
         <circle cx="855" cy="70" r="40" stroke="blue" stroke-width="6" fill="none" />
         <circle cx="940" cy="70" r="40" stroke="black" stroke-width="6" fill="none" />
