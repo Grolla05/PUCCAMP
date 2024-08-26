@@ -3,7 +3,7 @@
 <div>
   <a href="https://github.com/Grolla05"></a>
     <a href="https://www.puc-campinas.edu.br/">
-      <img src="/wp-content/uploads/2022/06/logo-puc.png" class="logo">
+     <img src="//upload.wikimedia.org/wikipedia/commons/1/1c/Bras%C3%A3o_PUC-Campinas_-_Transparente.png" decoding="async" width="500" height="196" data-file-width="500" data-file-height="196">
     </a>
 </div>
     
