@@ -3,7 +3,7 @@
 <div>
   <a href="https://github.com/Grolla05"></a>
     <a href="https://www.puc-campinas.edu.br/">
-     <img src="//upload.wikimedia.org/wikipedia/commons/1/1c/Bras%C3%A3o_PUC-Campinas_-_Transparente.png" decoding="async" width="500" height="196" data-file-width="500" data-file-height="196">
+     <img style="display: block;-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Bras%C3%A3o_PUC-Campinas_-_Transparente.png">
     </a>
 </div>
     
