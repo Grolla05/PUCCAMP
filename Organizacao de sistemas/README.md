@@ -1,5 +1,6 @@
 ## Repositorio destinado as atividades de Organização de Sistemas Computacionais no qual tratam das linguagens como assembly
 
+<a href="https://upload.wikimedia.org/wikipedia/commons/1/1b/ASCII-Table-wide.svg"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/ASCII-Table-wide.svg"></a>
 
 ##
 
