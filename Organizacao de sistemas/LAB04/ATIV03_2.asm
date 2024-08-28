@@ -21,21 +21,21 @@ MAIN PROC
         INT 21h
 
     ;Compara do caracter armazenado em AL com o valor 48, no qual na tabela ASCII representa o 0
-        CMP AL, 48
+        CMP AL, 30h
 
     ;Se o caractere em AL for menor que 48 ("0"), salta para a funcao LETRA
         JB  OUTRO
 
-    ;Compara do caracter armazenado em AL com o valor 48, no qual na tabela ASCII representa o 9
-        CMP AL, 57
+    ;Compara do caracter armazenado em AL com o valor 3Ah, no qual na tabela ASCII representa o 9
+        CMP AL, 3Ah
 
-    ;Se o caractere em AL for menor que 57 ("9"), salta para a funcao NUMERO
+    ;Se o caractere em AL for menor que 3Ah (":"), salta para a funcao NUMERO
         JB  NUMERO
 
-    ;Compara do caracter armazenado em AL com o valor 65, no qual na tabela ASCII representa o a
-        CMP AL, 65
+    ;Compara do caracter armazenado em AL com o valor 40h, no qual na tabela ASCII representa o a
+        CMP AL, 40h
 
-    ;Se o caractere em AL for menor que 57 ("9"), salta para a funcao NUMERO
+    ;Se o caractere em AL for maior que 40h ("@"), salta para a funcao NUMERO
         JA  LETRA
 
     ; Definindo a funcao outro
