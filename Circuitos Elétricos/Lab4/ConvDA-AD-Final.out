@@ -1,0 +1,269 @@
+
+**** 05/29/24 18:04:13 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Lab4\ConvDA-AD-Final.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Wed May 29 18:04:10 2024
+
+
+
+** Analysis setup **
+.tran 0 10ms 0 1ms
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "ConvDA-AD-Final.net"
+
+**** INCLUDING ConvDA-AD-Final.net ****
+* Schematics Netlist *
+
+
+
+E_U9         $N_0003 0 VALUE {LIMIT(V($N_0001,$N_0002)*1E6,-15V,+15V)}
+R_R20         $N_0002 $N_0003  1k  
+E_U3         $N_0005 0 VALUE {LIMIT(V($N_0004,$N_0002)*1E6,-15V,+15V)}
+R_R19         $N_0002 $N_0005  1k  
+E_U8         $N_0007 0 VALUE {LIMIT(V($N_0006,$N_0002)*1E6,-15V,+15V)}
+R_R18         $N_0002 $N_0007  1k  
+E_U7         $N_0009 0 VALUE {LIMIT(V($N_0008,$N_0002)*1E6,-15V,+15V)}
+R_R17         $N_0002 $N_0009  1k  
+E_U6         $N_0011 0 VALUE {LIMIT(V($N_0010,$N_0002)*1E6,-15V,+15V)}
+R_R16         $N_0002 $N_0011  1k  
+R_R15         $N_0002 $N_0012  1k  
+R_R14         $N_0002 $N_0013  1k  
+E_U5         $N_0013 0 VALUE {LIMIT(V($N_0014,$N_0002)*1E6,-15V,+15V)}
+E_U4         $N_0012 0 VALUE {LIMIT(V($N_0015,$N_0002)*1E6,-15V,+15V)}
+R_R22         $N_0014 $N_0015  1k  
+R_R21         0 $N_0014  1k  
+R_R23         $N_0015 $N_0010  1k  
+R_R25         $N_0008 $N_0006  1k  
+R_R24         $N_0010 $N_0008  1k  
+R_R26         $N_0006 $N_0004  1k  
+V_V6         $N_0016 0 10V
+R_R28         $N_0004 $N_0001  1k  
+R_R27         $N_0001 $N_0016  3k  
+R_R2         $N_0018 $N_0017  2k  
+R_R6         $N_0019 $N_0017  1k  
+R_R3         $N_0020 $N_0019  2k  
+R_R7         $N_0021 $N_0019  1k  
+R_R4         $N_0022 $N_0021  2k  
+R_R9         $N_0023 $N_0021  2k  
+E_U1         $N_0024 0 VALUE {LIMIT(V(0,$N_0023)*1E6,-15V,+15V)}
+R_R10         $N_0024 $N_0023  2k  
+R_R11         $N_0024 $N_0025  1k  
+E_U2         $N_0002 0 VALUE {LIMIT(V(0,$N_0025)*1E6,-15V,+15V)}
+R_R1         0 $N_0017  2k  
+R_R12         $N_0002 $N_0025  4.2k  
+V_VC         $N_0022 0 0
+V_VB         $N_0020 0 0
+V_VA         $N_0018 0 3
+
+**** RESUMING ConvDA-AD-Final.cir ****
+.INC "ConvDA-AD-Final.als"
+
+
+
+**** INCLUDING ConvDA-AD-Final.als ****
+* Schematics Aliases *
+
+.ALIASES
+E_U9            U9(OUT=$N_0003 +=$N_0001 -=$N_0002 )
+R_R20           R20(1=$N_0002 2=$N_0003 )
+E_U3            U3(OUT=$N_0005 +=$N_0004 -=$N_0002 )
+R_R19           R19(1=$N_0002 2=$N_0005 )
+E_U8            U8(OUT=$N_0007 +=$N_0006 -=$N_0002 )
+R_R18           R18(1=$N_0002 2=$N_0007 )
+E_U7            U7(OUT=$N_0009 +=$N_0008 -=$N_0002 )
+R_R17           R17(1=$N_0002 2=$N_0009 )
+E_U6            U6(OUT=$N_0011 +=$N_0010 -=$N_0002 )
+R_R16           R16(1=$N_0002 2=$N_0011 )
+R_R15           R15(1=$N_0002 2=$N_0012 )
+R_R14           R14(1=$N_0002 2=$N_0013 )
+E_U5            U5(OUT=$N_0013 +=$N_0014 -=$N_0002 )
+E_U4            U4(OUT=$N_0012 +=$N_0015 -=$N_0002 )
+R_R22           R22(1=$N_0014 2=$N_0015 )
+R_R21           R21(1=0 2=$N_0014 )
+R_R23           R23(1=$N_0015 2=$N_0010 )
+R_R25           R25(1=$N_0008 2=$N_0006 )
+R_R24           R24(1=$N_0010 2=$N_0008 )
+R_R26           R26(1=$N_0006 2=$N_0004 )
+V_V6            V6(+=$N_0016 -=0 )
+R_R28           R28(1=$N_0004 2=$N_0001 )
+R_R27           R27(1=$N_0001 2=$N_0016 )
+R_R2            R2(1=$N_0018 2=$N_0017 )
+R_R6            R6(1=$N_0019 2=$N_0017 )
+R_R3            R3(1=$N_0020 2=$N_0019 )
+R_R7            R7(1=$N_0021 2=$N_0019 )
+R_R4            R4(1=$N_0022 2=$N_0021 )
+R_R9            R9(1=$N_0023 2=$N_0021 )
+E_U1            U1(OUT=$N_0024 +=0 -=$N_0023 )
+R_R10           R10(1=$N_0024 2=$N_0023 )
+R_R11           R11(1=$N_0024 2=$N_0025 )
+E_U2            U2(OUT=$N_0002 +=0 -=$N_0025 )
+R_R1            R1(1=0 2=$N_0017 )
+R_R12           R12(1=$N_0002 2=$N_0025 )
+V_VC            VC(+=$N_0022 -=0 )
+V_VB            VB(+=$N_0020 -=0 )
+V_VA            VA(+=$N_0018 -=0 )
+.ENDALIASES
+
+
+**** RESUMING ConvDA-AD-Final.cir ****
+.probe
+
+
+.END
+
+**** 05/29/24 18:04:13 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Lab4\ConvDA-AD-Final.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    7.0000                   ($N_0002)    1.0500                       
+
+($N_0003)   15.0000                   ($N_0004)    6.0000                       
+
+($N_0005)   15.0000                   ($N_0006)    5.0000                       
+
+($N_0007)   15.0000                   ($N_0008)    4.0000                       
+
+($N_0009)   15.0000                   ($N_0010)    3.0000                       
+
+($N_0011)   15.0000                   ($N_0012)   15.0000                       
+
+($N_0013)  -15.0000                   ($N_0014)    1.0000                       
+
+($N_0015)    2.0000                   ($N_0016)   10.0000                       
+
+($N_0017)    1.0000                   ($N_0018)    3.0000                       
+
+($N_0019)     .5000                   ($N_0020)    0.0000                       
+
+($N_0021)     .2500                   ($N_0022)    0.0000                       
+
+($N_0023) 250.0E-09                   ($N_0024)    -.2500                       
+
+($N_0025)-1.050E-06                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V6        -1.000E-03
+    V_VC         1.250E-04
+    V_VB         2.500E-04
+    V_VA        -1.000E-03
+
+    TOTAL POWER DISSIPATION   1.30E-02  WATTS
+
+
+**** 05/29/24 18:04:13 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Lab4\ConvDA-AD-Final.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         E_U9        E_U3        E_U8        E_U7        E_U6      
+V-SOURCE     1.500E+01   1.500E+01   1.500E+01   1.500E+01   1.500E+01
+I-SOURCE    -1.395E-02  -1.395E-02  -1.395E-02  -1.395E-02  -1.395E-02
+
+NAME         E_U5        E_U4        E_U1        E_U2      
+V-SOURCE    -1.500E+01   1.500E+01  -2.500E-01   1.050E+00
+I-SOURCE     1.605E-02  -1.395E-02   3.750E-04   6.740E-02
+**** 05/29/24 18:04:13 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Lab4\ConvDA-AD-Final.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    7.0000                   ($N_0002)    1.0500                       
+
+($N_0003)   15.0000                   ($N_0004)    6.0000                       
+
+($N_0005)   15.0000                   ($N_0006)    5.0000                       
+
+($N_0007)   15.0000                   ($N_0008)    4.0000                       
+
+($N_0009)   15.0000                   ($N_0010)    3.0000                       
+
+($N_0011)   15.0000                   ($N_0012)   15.0000                       
+
+($N_0013)  -15.0000                   ($N_0014)    1.0000                       
+
+($N_0015)    2.0000                   ($N_0016)   10.0000                       
+
+($N_0017)    1.0000                   ($N_0018)    3.0000                       
+
+($N_0019)     .5000                   ($N_0020)    0.0000                       
+
+($N_0021)     .2500                   ($N_0022)    0.0000                       
+
+($N_0023) 250.0E-09                   ($N_0024)    -.2500                       
+
+($N_0025)-1.050E-06                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V6        -1.000E-03
+    V_VC         1.250E-04
+    V_VB         2.500E-04
+    V_VA        -1.000E-03
+
+    TOTAL POWER DISSIPATION   1.30E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .02
+

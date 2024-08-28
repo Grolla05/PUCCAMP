@@ -1,0 +1,23 @@
+* C:\Users\felipe\Desktop\DEV\Circuitos Elétricos\Lab4\ConvDA-AD-Final.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Wed May 29 18:04:10 2024
+
+
+
+** Analysis setup **
+.tran 0 10ms 0 1ms
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "ConvDA-AD-Final.net"
+.INC "ConvDA-AD-Final.als"
+
+
+.probe
+
+
+.END

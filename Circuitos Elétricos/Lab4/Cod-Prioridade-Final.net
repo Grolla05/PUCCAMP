@@ -1,0 +1,25 @@
+* Schematics Netlist *
+
+
+
+R_R44         0 $N_0001  1k  
+R_R43         0 $N_0002  1k  
+R_R49         0 $N_0003  1k  
+X_U12         0 $N_0007 $N_0008 $N_0009 $N_0010 $N_0011 $N_0012 $N_0013 0
++  $N_0005 $N_0004 $N_0006 $N_0002 $N_0001 $G_DPWR $G_DGND 74148 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+R_R48         0 $N_0014  1k  
+R_R50         0 $N_0015  1k  
+X_U34A         $N_0005 $N_0014 $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U35A         $N_0004 $N_0003 $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U36A         $N_0006 $N_0015 $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+V_C1         $N_0007 0 0
+V_C2         $N_0008 0 0
+V_C3         $N_0009 0 0
+V_C4         $N_0010 0 0
+V_C5         $N_0011 0 0
+V_C6         $N_0012 0 0
+V_C7         $N_0013 0 0
