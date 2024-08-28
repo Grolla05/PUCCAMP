@@ -1,0 +1,23 @@
+* C:\Users\felipe\Desktop\DEV\Circuitos Elétricos\LAB1\Lab 1-3-2.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Thu Mar 28 16:52:43 2024
+
+
+
+** Analysis setup **
+.tran 0s 100ms 0 10us
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Lab 1-3-2.net"
+.INC "Lab 1-3-2.als"
+
+
+.probe
+
+
+.END

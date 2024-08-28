@@ -1,0 +1,182 @@
+
+**** 04/14/24 15:31:11 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\LAB1\Lab 1-3-1.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Thu Mar 28 18:33:31 2024
+
+
+
+** Analysis setup **
+.tran 0s 100ms 0 10us
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Lab 1-3-1.net"
+
+**** INCLUDING "Lab 1-3-1.net" ****
+* Schematics Netlist *
+
+
+
+D_D3         0 $N_0001 D1N4002 
+D_D4         0 $N_0002 D1N4002 
+V_Vac         $N_0001 $N_0002 DC 0 AC 12
++SIN 0 12 60 0 0 0
+R_RL         0 $N_0003  1k  
+D_D1         $N_0001 $N_0003 D1N4002 
+D_D2         $N_0002 $N_0003 D1N4002 
+
+**** RESUMING "Lab 1-3-1.cir" ****
+.INC "Lab 1-3-1.als"
+
+
+
+**** INCLUDING "Lab 1-3-1.als" ****
+* Schematics Aliases *
+
+.ALIASES
+D_D3            D3(1=0 2=$N_0001 )
+D_D4            D4(1=0 2=$N_0002 )
+V_Vac           Vac(+=$N_0001 -=$N_0002 )
+R_RL            RL(1=0 2=$N_0003 )
+D_D1            D1(1=$N_0001 2=$N_0003 )
+D_D2            D2(1=$N_0002 2=$N_0003 )
+.ENDALIASES
+
+
+**** RESUMING "Lab 1-3-1.cir" ****
+.probe
+
+
+.END
+
+**** 04/14/24 15:31:11 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\LAB1\Lab 1-3-1.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N4002         
+          IS   14.110000E-09 
+           N    1.984        
+         ISR  100.000000E-12 
+         IKF   94.81         
+          BV  100.1          
+         IBV   10            
+          RS     .03389      
+          TT    4.761000E-06 
+         CJO   51.170000E-12 
+          VJ     .3905       
+           M     .2762       
+
+
+**** 04/14/24 15:31:11 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\LAB1\Lab 1-3-1.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)-1.592E-18                   ($N_0002)-1.592E-18                       
+
+($N_0003)-61.43E-21                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vac        0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 04/14/24 15:31:11 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\LAB1\Lab 1-3-1.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D_D3        D_D4        D_D1        D_D2      
+MODEL        D1N4002     D1N4002     D1N4002     D1N4002   
+ID           0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+VD           1.59E-18    1.59E-18   -1.53E-18   -1.53E-18 
+REQ          3.61E+06    3.61E+06    3.61E+06    3.61E+06 
+CAP          5.25E-11    5.25E-11    5.25E-11    5.25E-11 
+**** 04/14/24 15:31:11 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\LAB1\Lab 1-3-1.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)-1.592E-18                   ($N_0002)-1.592E-18                       
+
+($N_0003)-61.43E-21                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vac        0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .28
+
