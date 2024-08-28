@@ -1,0 +1,23 @@
+* C:\Users\felipe\Desktop\DEV\Circuitos Elétricos\Exercicios\Av2_Q4.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Sun Jun 02 16:39:15 2024
+
+
+
+** Analysis setup **
+.tran 0ns 1ms 0 1us
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Av2_Q4.net"
+.INC "Av2_Q4.als"
+
+
+.probe
+
+
+.END

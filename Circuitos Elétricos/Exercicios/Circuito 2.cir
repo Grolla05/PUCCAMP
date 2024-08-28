@@ -1,0 +1,22 @@
+* C:\Users\felipe\Desktop\DEV\Circuitos Elétricos\Circuito 2.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Tue Feb 27 14:47:15 2024
+
+
+
+** Analysis setup **
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Circuito 2.net"
+.INC "Circuito 2.als"
+
+
+.probe
+
+
+.END

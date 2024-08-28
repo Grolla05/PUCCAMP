@@ -1,0 +1,12 @@
+* Schematics Netlist *
+
+
+
+R_R1+         $N_0002 $N_0001  1k  
+E_U1         $N_0004 0 VALUE {LIMIT(V($N_0001,$N_0003)*1E6,-15V,+15V)}
+R_RL         0 $N_0004  500  
+R_R1-         $N_0005 $N_0003  1k  
+R_R2-         $N_0003 $N_0004  50k  
+R_R2+         0 $N_0001  50k  
+V_Vin1         $N_0002 0 100mV
+V_Vin2         $N_0005 0 110mV

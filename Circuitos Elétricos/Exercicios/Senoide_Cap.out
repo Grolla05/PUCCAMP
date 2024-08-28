@@ -1,0 +1,134 @@
+
+**** 03/19/24 20:42:51 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\Eletronica\Senoide_Cap.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Tue Mar 19 20:42:47 2024
+
+
+
+** Analysis setup **
+.tran 0s 16.67ms 0 10us
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Senoide_Cap.net"
+
+**** INCLUDING Senoide_Cap.net ****
+* Schematics Netlist *
+
+
+
+V_Vac         $N_0001 0 DC 0 AC 0
++SIN 0 5 60 0 0 0
+C_C1         0 $N_0002  500u  
+R_R1         $N_0001 $N_0002  5  
+
+**** RESUMING Senoide_Cap.cir ****
+.INC "Senoide_Cap.als"
+
+
+
+**** INCLUDING Senoide_Cap.als ****
+* Schematics Aliases *
+
+.ALIASES
+V_Vac           Vac(+=$N_0001 -=0 )
+C_C1            C1(1=0 2=$N_0002 )
+R_R1            R1(1=$N_0001 2=$N_0002 )
+.ENDALIASES
+
+
+**** RESUMING Senoide_Cap.cir ****
+.probe
+
+
+.END
+
+**** 03/19/24 20:42:51 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\Eletronica\Senoide_Cap.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vac        0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 03/19/24 20:42:51 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\Eletronica\Senoide_Cap.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+**** 03/19/24 20:42:51 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\Eletronica\Senoide_Cap.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vac        0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .05
+

@@ -1,0 +1,135 @@
+
+**** 04/14/24 08:46:20 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\Eletronica\FPA_Ind.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Tue Mar 19 20:41:31 2024
+
+
+
+** Analysis setup **
+.ac OCT 100 1 100k
+.tran 0s 16.67ms 0 10us
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "FPA_Ind.net"
+
+**** INCLUDING FPA_Ind.net ****
+* Schematics Netlist *
+
+
+
+V_Vac         $N_0001 0 DC 0 AC 1
++SIN 0 1 1k 0 0 0
+R_R1         $N_0002 $N_0001  100  
+L_L1         $N_0002 0  10mH  
+
+**** RESUMING FPA_Ind.cir ****
+.INC "FPA_Ind.als"
+
+
+
+**** INCLUDING FPA_Ind.als ****
+* Schematics Aliases *
+
+.ALIASES
+V_Vac           Vac(+=$N_0001 -=0 )
+R_R1            R1(1=$N_0002 2=$N_0001 )
+L_L1            L1(1=$N_0002 2=0 )
+.ENDALIASES
+
+
+**** RESUMING FPA_Ind.cir ****
+.probe
+
+
+.END
+
+**** 04/14/24 08:46:20 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\Eletronica\FPA_Ind.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vac        0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 04/14/24 08:46:20 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\Eletronica\FPA_Ind.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+**** 04/14/24 08:46:20 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\Eletronica\FPA_Ind.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vac        0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .09
+

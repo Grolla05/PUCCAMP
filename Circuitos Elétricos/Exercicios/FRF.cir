@@ -1,0 +1,24 @@
+* C:\Users\felipe\Desktop\DEV\Circuitos Elétricos\FRF.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Sun Mar 24 09:10:12 2024
+
+
+
+** Analysis setup **
+.ac OCT 100 1 100k
+.tran 0s 16.67ms 0 10us
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "FRF.net"
+.INC "FRF.als"
+
+
+.probe
+
+
+.END

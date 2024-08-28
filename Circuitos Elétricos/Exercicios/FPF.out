@@ -1,0 +1,141 @@
+
+**** 03/24/24 09:11:12 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\FPF.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Sun Mar 24 09:11:12 2024
+
+
+
+** Analysis setup **
+.ac OCT 100 1 100k
+.tran 0s 16.67ms 0 10us
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "FPF.net"
+
+**** INCLUDING FPF.net ****
+* Schematics Netlist *
+
+
+
+V_Vac         $N_0001 0 DC 0 AC 1
++SIN 0 1 1k 0 0 0
+R_R1         $N_0002 0  100  
+L_L1         $N_0003 $N_0002  10mH  
+C_C1         $N_0001 $N_0003  1u  
+
+**** RESUMING FPF.cir ****
+.INC "FPF.als"
+
+
+
+**** INCLUDING FPF.als ****
+* Schematics Aliases *
+
+.ALIASES
+V_Vac           Vac(+=$N_0001 -=0 )
+R_R1            R1(1=$N_0002 2=0 )
+L_L1            L1(1=$N_0003 2=$N_0002 )
+C_C1            C1(1=$N_0001 2=$N_0003 )
+.ENDALIASES
+
+
+**** RESUMING FPF.cir ****
+.probe
+
+
+.END
+
+**** 03/24/24 09:11:12 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\FPF.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    0.0000                       
+
+($N_0003)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vac        0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 03/24/24 09:11:12 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\FPF.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+**** 03/24/24 09:11:12 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\FPF.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    0.0000                       
+
+($N_0003)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vac        0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .08
+

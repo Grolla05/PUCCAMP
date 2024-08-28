@@ -1,0 +1,161 @@
+
+**** 06/02/24 16:39:19 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Exercicios\Av2_Q4.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Sun Jun 02 16:39:15 2024
+
+
+
+** Analysis setup **
+.tran 0ns 1ms 0 1us
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Av2_Q4.net"
+
+**** INCLUDING Av2_Q4.net ****
+* Schematics Netlist *
+
+
+
+R_R1+         $N_0002 $N_0001  1k  
+E_U1         $N_0004 0 VALUE {LIMIT(V($N_0001,$N_0003)*1E6,-15V,+15V)}
+R_RL         0 $N_0004  500  
+R_R1-         $N_0005 $N_0003  1k  
+R_R2-         $N_0003 $N_0004  50k  
+R_R2+         0 $N_0001  50k  
+V_Vin1         $N_0002 0 100mV
+V_Vin2         $N_0005 0 110mV
+
+**** RESUMING Av2_Q4.cir ****
+.INC "Av2_Q4.als"
+
+
+
+**** INCLUDING Av2_Q4.als ****
+* Schematics Aliases *
+
+.ALIASES
+R_R1+           R1+(1=$N_0002 2=$N_0001 )
+E_U1            U1(OUT=$N_0004 +=$N_0001 -=$N_0003 )
+R_RL            RL(1=0 2=$N_0004 )
+R_R1-           R1-(1=$N_0005 2=$N_0003 )
+R_R2-           R2-(1=$N_0003 2=$N_0004 )
+R_R2+           R2+(1=0 2=$N_0001 )
+V_Vin1          Vin1(+=$N_0002 -=0 )
+V_Vin2          Vin2(+=$N_0005 -=0 )
+.ENDALIASES
+
+
+**** RESUMING Av2_Q4.cir ****
+.probe
+
+
+.END
+
+**** 06/02/24 16:39:19 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Exercicios\Av2_Q4.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)     .0980                   ($N_0002)     .1000                       
+
+($N_0003)     .0980                   ($N_0004)    -.5000                       
+
+($N_0005)     .1100                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vin1      -1.961E-06
+    V_Vin2      -1.196E-05
+
+    TOTAL POWER DISSIPATION   1.51E-06  WATTS
+
+
+**** 06/02/24 16:39:19 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Exercicios\Av2_Q4.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         E_U1      
+V-SOURCE    -5.000E-01
+I-SOURCE     1.012E-03
+**** 06/02/24 16:39:19 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Exercicios\Av2_Q4.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)     .0980                   ($N_0002)     .1000                       
+
+($N_0003)     .0980                   ($N_0004)    -.5000                       
+
+($N_0005)     .1100                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vin1      -1.961E-06
+    V_Vin2      -1.196E-05
+
+    TOTAL POWER DISSIPATION   1.51E-06  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .03
+

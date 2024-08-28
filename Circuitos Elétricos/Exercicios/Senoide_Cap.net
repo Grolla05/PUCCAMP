@@ -1,0 +1,8 @@
+* Schematics Netlist *
+
+
+
+V_Vac         $N_0001 0 DC 0 AC 0
++SIN 0 5 60 0 0 0
+C_C1         0 $N_0002  500u  
+R_R1         $N_0001 $N_0002  5  

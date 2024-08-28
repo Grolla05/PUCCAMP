@@ -1,0 +1,24 @@
+* C:\Users\felipe\Desktop\Eletronica\FPA_Ind.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Tue Mar 19 20:41:31 2024
+
+
+
+** Analysis setup **
+.ac OCT 100 1 100k
+.tran 0s 16.67ms 0 10us
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "FPA_Ind.net"
+.INC "FPA_Ind.als"
+
+
+.probe
+
+
+.END

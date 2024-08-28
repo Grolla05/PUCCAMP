@@ -1,0 +1,66 @@
+
+**** 03/24/24 09:09:34 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Circuito 2.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Tue Feb 27 14:47:15 2024
+
+
+
+** Analysis setup **
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Circuito 2.net"
+
+**** INCLUDING "Circuito 2.net" ****
+* Schematics Netlist *
+
+
+
+V_V2         $N_0001 $N_0002 40V
+R_R1         $N_0004 $N_0003  5k  
+R_R2         $N_0004 $N_0001  10k  
+V_V1         $N_0001 $N_0003 20V
+R_R3         $N_0004 $N_0002  5k  
+
+**** RESUMING "Circuito 2.cir" ****
+.INC "Circuito 2.als"
+
+
+
+**** INCLUDING "Circuito 2.als" ****
+* Schematics Aliases *
+
+.ALIASES
+V_V2            V2(+=$N_0001 -=$N_0002 )
+R_R1            R1(1=$N_0004 2=$N_0003 )
+R_R2            R2(1=$N_0004 2=$N_0001 )
+V_V1            V1(+=$N_0001 -=$N_0003 )
+R_R3            R3(1=$N_0004 2=$N_0002 )
+.ENDALIASES
+
+
+**** RESUMING "Circuito 2.cir" ****
+.probe
+
+
+.END
+
+ERROR -- Node $N_0001 is floating
+ERROR -- Node $N_0002 is floating
+ERROR -- Node $N_0004 is floating
+ERROR -- Node $N_0003 is floating

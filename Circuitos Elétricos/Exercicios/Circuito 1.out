@@ -1,0 +1,115 @@
+
+**** 02/26/24 20:48:22 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Circuito 1.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Mon Feb 26 20:48:22 2024
+
+
+
+** Analysis setup **
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Circuito 1.net"
+
+**** INCLUDING "Circuito 1.net" ****
+* Schematics Netlist *
+
+
+
+R_R1         $N_0002 $N_0001  1k  
+R_R4         $N_0003 0  1k  
+V_V1         $N_0001 $N_0004 20V
+V_V2         $N_0002 0 40V
+R_R3         $N_0002 $N_0003  2k  
+R_R5         $N_0004 0  6k  
+R_R2         $N_0003 $N_0001  5k  
+
+**** RESUMING "Circuito 1.cir" ****
+.INC "Circuito 1.als"
+
+
+
+**** INCLUDING "Circuito 1.als" ****
+* Schematics Aliases *
+
+.ALIASES
+R_R1            R1(1=$N_0002 2=$N_0001 )
+R_R4            R4(1=$N_0003 2=0 )
+V_V1            V1(+=$N_0001 -=$N_0004 )
+V_V2            V2(+=$N_0002 -=0 )
+R_R3            R3(1=$N_0002 2=$N_0003 )
+R_R5            R5(1=$N_0004 2=0 )
+R_R2            R2(1=$N_0003 2=$N_0001 )
+.ENDALIASES
+
+
+**** RESUMING "Circuito 1.cir" ****
+.probe
+
+
+.END
+
+**** 02/26/24 20:48:22 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Circuito 1.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)   34.0150                   ($N_0002)   40.0000                       
+
+($N_0003)   15.7660                   ($N_0004)   14.0150                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         2.336E-03
+    V_V2        -1.810E-02
+
+    TOTAL POWER DISSIPATION   6.77E-01  WATTS
+
+
+**** 02/26/24 20:48:22 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Circuito 1.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME            0.00
+
