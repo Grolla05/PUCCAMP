@@ -1,0 +1,80 @@
+
+**** 04/23/24 18:44:33 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Lab2\Lab2-4.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Tue Apr 23 18:44:33 2024
+
+
+
+** Analysis setup **
+.ac DEC 10 10Hz 1GHz
+.tran 0us 20ms 0 10u
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Lab2-4.net"
+
+**** INCLUDING Lab2-4.net ****
+* Schematics Netlist *
+
+
+
+D_D1         0 $N_0001 D1N750 
+R_RL         0 $N_0002  100  
+D_D3         $N_0003 $N_0004 D1N4002 
+D_D2         $N_0003 $N_0005 D1N4002 
+V_Vac         $N_0005 $N_0004 DC 0 AC 17V
++SIN 0 17V 60Hz 0 0 0
+D_D5         $N_0005 $N_0006 D1N4002 
+D_D4         $N_0004 $N_0006 D1N4002 
+C_C4         $N_0003 $N_0006  470u  
+Q_Q1         $N_0007 $N_0001 $N_0002 Q2N2222
+R_Rs         $N_0001 $N_0007  150  
+V_V4         $N_0007 0 15,6V
+--------------------------$
+ERROR -- Expecting keyword STIMULUS, saw 6V.
+
+
+**** RESUMING Lab2-4.cir ****
+.INC "Lab2-4.als"
+
+
+
+**** INCLUDING Lab2-4.als ****
+* Schematics Aliases *
+
+.ALIASES
+D_D1            D1(1=0 2=$N_0001 )
+R_RL            RL(1=0 2=$N_0002 )
+D_D3            D3(1=$N_0003 2=$N_0004 )
+D_D2            D2(1=$N_0003 2=$N_0005 )
+V_Vac           Vac(+=$N_0005 -=$N_0004 )
+D_D5            D5(1=$N_0005 2=$N_0006 )
+D_D4            D4(1=$N_0004 2=$N_0006 )
+C_C4            C4(1=$N_0003 2=$N_0006 )
+Q_Q1            Q1(c=$N_0007 b=$N_0001 e=$N_0002 )
+R_Rs            Rs(1=$N_0001 2=$N_0007 )
+V_V4            V4(+=$N_0007 -=0 )
+.ENDALIASES
+
+
+**** RESUMING Lab2-4.cir ****
+.probe
+
+
+.END
+
