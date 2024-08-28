@@ -1,0 +1,78 @@
+
+**** 05/16/24 03:58:09 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Lab3\Lab3-9-v2.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Thu May 16 03:57:59 2024
+
+
+
+** Analysis setup **
+.tran 0ns 100ms 0 1us
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Lab3-9-v2.net"
+
+**** INCLUDING Lab3-9-v2.net ****
+* Schematics Netlist *
+
+
+
+R_Rf         $N_0002 $N_0001  1k  
+R_R1         $N_0003 $N_0002  1k  
+R_R2         $N_0004 $N_0002  1k  
+R_R3         $N_0005 $N_0002  1k  
+E_U1         $N_0001 0 VALUE {LIMIT(V(0,$N_0002)*1E6,-15V,+15V)}
+V_V2         $N_0004 0 DC 0V AC 0V
++SIN 0V 0,33V 180Hz 0 0 0
+------------------------$
+ERROR -- Expecting keyword STIMULUS, saw 0.
+
+V_V3         $N_0005 0 DC 0V AC 0V
++SIN 0V 0,2V 300Hz 0 0 0
+-----------------------$
+ERROR -- Expecting keyword STIMULUS, saw 0.
+
+V_V1         $N_0003 0 DC 0V AC 0V
++SIN 0V 1V 60Hz 0 0 0
+
+**** RESUMING Lab3-9-v2.cir ****
+.INC "Lab3-9-v2.als"
+
+
+
+**** INCLUDING Lab3-9-v2.als ****
+* Schematics Aliases *
+
+.ALIASES
+R_Rf            Rf(1=$N_0002 2=$N_0001 )
+R_R1            R1(1=$N_0003 2=$N_0002 )
+R_R2            R2(1=$N_0004 2=$N_0002 )
+R_R3            R3(1=$N_0005 2=$N_0002 )
+E_U1            U1(OUT=$N_0001 +=0 -=$N_0002 )
+V_V2            V2(+=$N_0004 -=0 )
+V_V3            V3(+=$N_0005 -=0 )
+V_V1            V1(+=$N_0003 -=0 )
+.ENDALIASES
+
+
+**** RESUMING Lab3-9-v2.cir ****
+.probe
+
+
+.END
+

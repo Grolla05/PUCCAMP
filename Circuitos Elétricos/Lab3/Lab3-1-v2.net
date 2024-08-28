@@ -1,0 +1,10 @@
+* Schematics Netlist *
+
+
+
+R_RL         0 $N_0001  100  
+X_X1         $N_0002 $N_0003 $N_0001 2N1595
+R_R1         $N_0004 $N_0003  1k  
+V_Vac         $N_0002 0 DC 0 AC 0
++SIN 0 12V 60Hz 0 0 0
+V_Vdc         $N_0004 0 0

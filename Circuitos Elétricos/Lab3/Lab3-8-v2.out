@@ -1,0 +1,165 @@
+
+**** 05/21/24 18:44:04 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Lab3\Lab3-8-v2.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Tue May 21 18:44:04 2024
+
+
+
+** Analysis setup **
+.tran 0ns 1ms 0 1us
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Lab3-8-v2.net"
+
+**** INCLUDING Lab3-8-v2.net ****
+* Schematics Netlist *
+
+
+
+V_V1         $N_0001 0 1V
+V_V2         $N_0002 0 1V
+V_V3         $N_0003 0 1V
+R_R2         $N_0002 $N_0004  1k  
+R_R1         $N_0001 $N_0004  1k  
+R_R3         $N_0003 $N_0004  1k  
+R_Rf1         0 $N_0005  1k  
+E_U1         $N_0006 0 VALUE {LIMIT(V($N_0004,$N_0005)*1E6,-15V,+15V)}
+R_Rf2         $N_0005 $N_0006  2k  
+
+**** RESUMING Lab3-8-v2.cir ****
+.INC "Lab3-8-v2.als"
+
+
+
+**** INCLUDING Lab3-8-v2.als ****
+* Schematics Aliases *
+
+.ALIASES
+V_V1            V1(+=$N_0001 -=0 )
+V_V2            V2(+=$N_0002 -=0 )
+V_V3            V3(+=$N_0003 -=0 )
+R_R2            R2(1=$N_0002 2=$N_0004 )
+R_R1            R1(1=$N_0001 2=$N_0004 )
+R_R3            R3(1=$N_0003 2=$N_0004 )
+R_Rf1           Rf1(1=0 2=$N_0005 )
+E_U1            U1(OUT=$N_0006 +=$N_0004 -=$N_0005 )
+R_Rf2           Rf2(1=$N_0005 2=$N_0006 )
+.ENDALIASES
+
+
+**** RESUMING Lab3-8-v2.cir ****
+.probe
+
+
+.END
+
+**** 05/21/24 18:44:04 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Lab3\Lab3-8-v2.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    1.0000                   ($N_0002)    1.0000                       
+
+($N_0003)    1.0000                   ($N_0004)    1.0000                       
+
+($N_0005)    1.0000                   ($N_0006)    3.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         5.042E-20
+    V_V2         5.042E-20
+    V_V3         5.042E-20
+
+    TOTAL POWER DISSIPATION  -1.51E-19  WATTS
+
+
+**** 05/21/24 18:44:04 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Lab3\Lab3-8-v2.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         E_U1      
+V-SOURCE     3.000E+00
+I-SOURCE    -1.000E-03
+**** 05/21/24 18:44:04 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Lab3\Lab3-8-v2.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    1.0000                   ($N_0002)    1.0000                       
+
+($N_0003)    1.0000                   ($N_0004)    1.0000                       
+
+($N_0005)    1.0000                   ($N_0006)    3.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         5.042E-20
+    V_V2         5.042E-20
+    V_V3         5.042E-20
+
+    TOTAL POWER DISSIPATION  -1.51E-19  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .03
+

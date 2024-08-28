@@ -1,0 +1,9 @@
+* Schematics Netlist *
+
+
+
+R_RL         0 $N_0001  100  
+V_Vac         $N_0002 0 DC 0 AC 0V
++SIN 0 179.6V 60Hz 0 0 0
+X_TRIAC1         $N_0002 $N_0003 $N_0001 2N5444
+R_R1         $N_0002 $N_0003  220  

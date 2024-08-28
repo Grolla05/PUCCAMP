@@ -1,0 +1,296 @@
+
+**** 05/14/24 21:58:21 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Lab3\Lab3-1-v2.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Tue May 14 21:58:21 2024
+
+
+
+** Analysis setup **
+.tran 0ms 100ms 0 10us
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Lab3-1-v2.net"
+
+**** INCLUDING Lab3-1-v2.net ****
+* Schematics Netlist *
+
+
+
+R_RL         0 $N_0001  100  
+X_X1         $N_0002 $N_0003 $N_0001 2N1595
+R_R1         $N_0004 $N_0003  1k  
+V_Vac         $N_0002 0 DC 0 AC 0
++SIN 0 12V 60Hz 0 0 0
+V_Vdc         $N_0004 0 0
+
+**** RESUMING Lab3-1-v2.cir ****
+.INC "Lab3-1-v2.als"
+
+
+
+**** INCLUDING Lab3-1-v2.als ****
+* Schematics Aliases *
+
+.ALIASES
+R_RL            RL(1=0 2=$N_0001 )
+X_X1            X1(A=$N_0002 G=$N_0003 K=$N_0001 )
+R_R1            R1(1=$N_0004 2=$N_0003 )
+V_Vac           Vac(+=$N_0002 -=0 )
+V_Vdc           Vdc(+=$N_0004 -=0 )
+.ENDALIASES
+
+
+**** RESUMING Lab3-1-v2.cir ****
+.probe
+
+
+.END
+
+**** 05/14/24 21:58:21 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Lab3\Lab3-1-v2.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_X1.X1.Dgk     X_X1.X1.Dseries X_X1.X1.Delay   X_X1.X1.Dkarev  
+          IS  100.000000E-18   10.000000E-15    1.000000E-12  100.000000E-12 
+          RS    5                                .01             .01         
+         CJO   50.000000E-12                    5.000000E-12    5.000000E-12 
+
+
+               X_X1.X1.Dakfwd  X_X1.X1.Dbreak  
+          IS   40.000000E-12   10.000000E-15 
+          BV                   55            
+         IBV                  100.000000E-09 
+          RS                     .5          
+         CJO    5.000000E-12    5.000000E-12 
+
+
+**** 05/14/24 21:58:21 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Lab3\Lab3-1-v2.sch
+
+
+ ****     Voltage Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_X1.X1.Vswitch 
+         RON     .4          
+        ROFF  454.545500E+03 
+         VON    5            
+        VOFF    1.5          
+
+
+**** 05/14/24 21:58:21 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Lab3\Lab3-1-v2.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)-782.1E-27                   ($N_0002)    0.0000                       
+
+($N_0003) 7.821E-24                   ($N_0004)    0.0000                       
+
+(X_X1.X1.Itot)    0.0000              (X_X1.X1.prod)    0.0000                  
+
+(X_X1.X1.dlay1) 144.0E-27             (X_X1.X1.dlay2)-639.2E-27                 
+
+(X_X1.X1.dvdt0) 782.1E-27             (X_X1.X1.dvdt1)-782.1E-27                 
+
+(X_X1.X1.dvdt2)-782.1E-27             (X_X1.X1.gate1) 8.016E-24                 
+
+(X_X1.X1.gate2)-782.1E-27             (X_X1.X1.gate4)    0.0000                 
+
+(X_X1.X1.anode0)-1.920E-27            (X_X1.X1.anode2)-782.1E-27                
+
+(X_X1.X1.break1)-410.9E-18            (X_X1.X1.contot)    0.0000                
+
+(X_X1.X1.condvdt)    0.0000           (X_X1.X1.congate)    0.0000               
+
+(X_X1.X1.conmain)    0.0000           (X_X1.X1.control) 1.778E-18           
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vac        0.000E+00
+    V_Vdc        7.821E-27
+    X_X1.X1.VIak   0.000E+00
+    X_X1.X1.VdVdt   0.000E+00
+    X_X1.X1.VIgf  -7.821E-27
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 05/14/24 21:58:21 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Lab3\Lab3-1-v2.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_X1.X1.Emon            X_X1.X1.EdVdt         
+V-SOURCE     7.821E-25               0.000E+00            
+I-SOURCE     0.000E+00               0.000E+00            
+
+NAME         X_X1.X1.Egate1          X_X1.X1.Egon1         
+V-SOURCE     0.000E+00               0.000E+00            
+I-SOURCE     0.000E+00               0.000E+00            
+
+NAME         X_X1.X1.EItot           X_X1.X1.Eprod         
+V-SOURCE     0.000E+00               0.000E+00            
+I-SOURCE     0.000E+00               0.000E+00            
+
+NAME         X_X1.X1.Elin            X_X1.X1.Eonoff        
+V-SOURCE     0.000E+00               0.000E+00            
+I-SOURCE     0.000E+00              -1.765E-30            
+
+
+**** DIODES
+
+
+NAME         X_X1.X1.Dak1            X_X1.X1.Dka           
+MODEL        X_X1.X1.Dakfwd          X_X1.X1.Dkarev        
+ID           0.00E+00               -0.00E+00             
+VD           7.80E-25               -7.80E-25             
+REQ          6.46E+08                2.59E+08             
+CAP          5.00E-12                5.00E-12             
+
+NAME         X_X1.X1.Dgkf            X_X1.X1.Dton          
+MODEL        X_X1.X1.Dgk             X_X1.X1.Delay         
+ID           0.00E+00               -1.13E-28             
+VD           8.80E-24               -1.78E-18             
+REQ          9.96E+11                2.52E+10             
+CAP          5.00E-11                5.00E-12             
+
+NAME         X_X1.X1.Dtoff           X_X1.X1.Dbreak        
+MODEL        X_X1.X1.Delay           X_X1.X1.Dbreak        
+ID           1.78E-30                5.71E-28             
+VD           1.78E-18                4.11E-16             
+REQ          2.52E+10                7.21E+11             
+CAP          5.00E-12                5.00E-12             
+
+NAME         X_X1.X1.Dbreak2       
+MODEL        X_X1.X1.Dseries       
+ID           5.71E-28             
+VD           4.11E-16             
+REQ          7.21E+11             
+CAP          0.00E+00             
+
+
+**** VOLTAGE CONTROLLED SWITCHES
+
+
+NAME         X_X1.X1.Scr           
+MODEL        X_X1.X1.Vswitch       
+I LOAD       0.00E+00             
+V LOAD       1.92E-27             
+R LOAD       4.55E+05             
+V CTRL       1.78E-18             
+**** 05/14/24 21:58:21 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Lab3\Lab3-1-v2.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)-782.1E-27                   ($N_0002)    0.0000                       
+
+($N_0003) 7.821E-24                   ($N_0004)    0.0000                       
+
+(X_X1.X1.Itot)    0.0000              (X_X1.X1.prod)    0.0000                  
+
+(X_X1.X1.dlay1) 144.0E-27             (X_X1.X1.dlay2)-639.2E-27                 
+
+(X_X1.X1.dvdt0) 782.1E-27             (X_X1.X1.dvdt1)-782.1E-27                 
+
+(X_X1.X1.dvdt2)-782.1E-27             (X_X1.X1.gate1) 8.016E-24                 
+
+(X_X1.X1.gate2)-782.1E-27             (X_X1.X1.gate4)    0.0000                 
+
+(X_X1.X1.anode0)-1.920E-27            (X_X1.X1.anode2)-782.1E-27                
+
+(X_X1.X1.break1)-410.9E-18            (X_X1.X1.contot)    0.0000                
+
+(X_X1.X1.condvdt)    0.0000           (X_X1.X1.congate)    0.0000               
+
+(X_X1.X1.conmain)    0.0000           (X_X1.X1.control) 1.778E-18           
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vac        0.000E+00
+    V_Vdc        7.821E-27
+    X_X1.X1.VIak   0.000E+00
+    X_X1.X1.VdVdt   0.000E+00
+    X_X1.X1.VIgf  -7.821E-27
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .59
+

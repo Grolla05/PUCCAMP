@@ -1,0 +1,148 @@
+
+**** 05/16/24 04:29:47 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Lab3\Lab3-4-v2.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Thu May 16 04:29:47 2024
+
+
+
+** Analysis setup **
+.tran 0ns 10ms 0 1us
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Lab3-4-v2.net"
+
+**** INCLUDING Lab3-4-v2.net ****
+* Schematics Netlist *
+
+
+
+E_U1         $N_0002 0 VALUE {LIMIT(V(0,$N_0001)*1E6,-15V,+15V)}
+V_Vin         $N_0003 0 DC 0 AC 0V
++SIN 0 100mV 1kHz 0 0 0
+R_R1         $N_0003 $N_0001  9K  
+R_R2         $N_0001 $N_0002  1k  
+
+**** RESUMING Lab3-4-v2.cir ****
+.INC "Lab3-4-v2.als"
+
+
+
+**** INCLUDING Lab3-4-v2.als ****
+* Schematics Aliases *
+
+.ALIASES
+E_U1            U1(OUT=$N_0002 +=0 -=$N_0001 )
+V_Vin           Vin(+=$N_0003 -=0 )
+R_R1            R1(1=$N_0003 2=$N_0001 )
+R_R2            R2(1=$N_0001 2=$N_0002 )
+.ENDALIASES
+
+
+**** RESUMING Lab3-4-v2.cir ****
+.probe
+
+
+.END
+
+**** 05/16/24 04:29:47 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Lab3\Lab3-4-v2.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    0.0000                       
+
+($N_0003)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vin        0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 05/16/24 04:29:47 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Lab3\Lab3-4-v2.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         E_U1      
+V-SOURCE     0.000E+00
+I-SOURCE     0.000E+00
+**** 05/16/24 04:29:47 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Lab3\Lab3-4-v2.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    0.0000                       
+
+($N_0003)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vin        0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .28
+

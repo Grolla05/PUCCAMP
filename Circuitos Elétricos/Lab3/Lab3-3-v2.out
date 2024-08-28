@@ -1,0 +1,318 @@
+
+**** 05/15/24 19:09:22 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Lab3\Lab3-3-v2.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Wed May 15 19:09:22 2024
+
+
+
+** Analysis setup **
+.tran 0ms 60ms 0 10us
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Lab3-3-v2.net"
+
+**** INCLUDING Lab3-3-v2.net ****
+* Schematics Netlist *
+
+
+
+R_RL         0 $N_0001  100  
+V_Vac         $N_0002 0 DC 0 AC 0V
++SIN 0 179.6V 60Hz 0 0 0
+X_TRIAC1         $N_0002 $N_0003 $N_0001 2N5444
+R_R1         $N_0002 $N_0003  220  
+
+**** RESUMING Lab3-3-v2.cir ****
+.INC "Lab3-3-v2.als"
+
+
+
+**** INCLUDING Lab3-3-v2.als ****
+* Schematics Aliases *
+
+.ALIASES
+R_RL            RL(1=0 2=$N_0001 )
+V_Vac           Vac(+=$N_0002 -=0 )
+X_TRIAC1          TRIAC1(MT2=$N_0002 G=$N_0003 MT1=$N_0001 )
+R_R1            R1(1=$N_0002 2=$N_0003 )
+.ENDALIASES
+
+
+**** RESUMING Lab3-3-v2.cir ****
+.probe
+
+
+.END
+
+**** 05/15/24 19:09:22 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Lab3\Lab3-3-v2.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_TRIAC1.X1.Dgk X_TRIAC1.X1.Delay               X_TRIAC1.X1.Dak 
+          IS  100.000000E-18    1.000000E-12                   40.000000E-12 
+          RS    5                .01                                         
+         CJO   50.000000E-12    5.000000E-12                    5.000000E-12 
+
+
+**** 05/15/24 19:09:22 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Lab3\Lab3-3-v2.sch
+
+
+ ****     Voltage Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_TRIAC1.X1.Vswitch 
+         RON     .016964     
+        ROFF   35.000000E+03 
+         VON    5            
+        VOFF    1.5          
+
+
+**** 05/15/24 19:09:22 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Lab3\Lab3-3-v2.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    0.0000                       
+
+($N_0003)    0.0000                   (X_TRIAC1.X1.MT20)    0.0000              
+
+(X_TRIAC1.X1.MT21)    0.0000          (X_TRIAC1.X1.MT22)    0.0000              
+
+(X_TRIAC1.X1.MT23)    0.0000          (X_TRIAC1.X1.dlay1) 8.183E-24             
+
+(X_TRIAC1.X1.dlay2)-28.76E-24         (X_TRIAC1.X1.dvdt0)    0.0000             
+
+(X_TRIAC1.X1.dvdt1)    0.0000         (X_TRIAC1.X1.dvdt2)    0.0000             
+
+(X_TRIAC1.X1.gate1)    0.0000         (X_TRIAC1.X1.gate2)    0.0000             
+
+(X_TRIAC1.X1.main1)    0.0000         (X_TRIAC1.X1.main2)    0.0000             
+
+(X_TRIAC1.X1.main4)    1.0000         (X_TRIAC1.X1.cnhold)    0.0000            
+
+(X_TRIAC1.X1.cnmain)    0.0000        (X_TRIAC1.X1.cntrol)-1.587E-18            
+
+(X_TRIAC1.X1.contot)    0.0000        (X_TRIAC1.X1.dlayr1) 8.183E-24            
+
+(X_TRIAC1.X1.dlayr2)-28.76E-24        (X_TRIAC1.X1.main1r)    0.0000            
+
+(X_TRIAC1.X1.main2r)    0.0000        (X_TRIAC1.X1.cnholdr)    0.0000           
+
+(X_TRIAC1.X1.cnmainr)    0.0000       (X_TRIAC1.X1.cntrolr)-1.587E-18           
+
+(X_TRIAC1.X1.condvdt)    0.0000       (X_TRIAC1.X1.congate)    0.0000           
+
+(X_TRIAC1.X1.contotr)    0.0000       
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vac        0.000E+00
+    X_TRIAC1.X1.VIak   0.000E+00
+    X_TRIAC1.X1.VIka   0.000E+00
+    X_TRIAC1.X1.VdVdt   0.000E+00
+    X_TRIAC1.X1.VIgf   0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 05/15/24 19:09:22 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Lab3\Lab3-3-v2.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_TRIAC1.X1.Emon        X_TRIAC1.X1.EdVdt     
+V-SOURCE     0.000E+00               0.000E+00            
+I-SOURCE     0.000E+00               0.000E+00            
+
+NAME         X_TRIAC1.X1.Egate       X_TRIAC1.X1.Emain1    
+V-SOURCE     0.000E+00               0.000E+00            
+I-SOURCE     0.000E+00               0.000E+00            
+
+NAME         X_TRIAC1.X1.Emain2      X_TRIAC1.X1.Emain3    
+V-SOURCE     0.000E+00               0.000E+00            
+I-SOURCE     0.000E+00               0.000E+00            
+
+NAME         X_TRIAC1.X1.Emain1r     X_TRIAC1.X1.Emain2r   
+V-SOURCE     0.000E+00               0.000E+00            
+I-SOURCE     0.000E+00               0.000E+00            
+
+NAME         X_TRIAC1.X1.Emain3r     X_TRIAC1.X1.Emain4    
+V-SOURCE     0.000E+00               1.000E+00            
+I-SOURCE     0.000E+00              -1.000E-06            
+
+NAME         X_TRIAC1.X1.Emain5      X_TRIAC1.X1.Emain5r   
+V-SOURCE     0.000E+00               0.000E+00            
+I-SOURCE     0.000E+00               0.000E+00            
+
+NAME         X_TRIAC1.X1.Eonoff      X_TRIAC1.X1.Eonoffr   
+V-SOURCE     0.000E+00               0.000E+00            
+I-SOURCE     1.575E-30               1.575E-30            
+
+
+**** DIODES
+
+
+NAME         X_TRIAC1.X1.Dak1        X_TRIAC1.X1.Dka1      
+MODEL        X_TRIAC1.X1.Dak         X_TRIAC1.X1.Dak       
+ID           0.00E+00                0.00E+00             
+VD           0.00E+00                0.00E+00             
+REQ          6.46E+08                6.46E+08             
+CAP          5.00E-12                5.00E-12             
+
+NAME         X_TRIAC1.X1.Dgkf        X_TRIAC1.X1.Dgkr      
+MODEL        X_TRIAC1.X1.Dgk         X_TRIAC1.X1.Dgk       
+ID           0.00E+00                0.00E+00             
+VD           0.00E+00                0.00E+00             
+REQ          9.96E+11                9.96E+11             
+CAP          5.00E-11                5.00E-11             
+
+NAME         X_TRIAC1.X1.Dton        X_TRIAC1.X1.Dtoff     
+MODEL        X_TRIAC1.X1.Delay       X_TRIAC1.X1.Delay     
+ID           1.59E-30               -1.13E-28             
+VD           1.59E-18               -1.59E-18             
+REQ          2.52E+10                2.52E+10             
+CAP          5.00E-12                5.00E-12             
+
+NAME         X_TRIAC1.X1.Dtonr       X_TRIAC1.X1.Dtoffr    
+MODEL        X_TRIAC1.X1.Delay       X_TRIAC1.X1.Delay     
+ID           1.59E-30               -1.13E-28             
+VD           1.59E-18               -1.59E-18             
+REQ          2.52E+10                2.52E+10             
+CAP          5.00E-12                5.00E-12             
+
+
+**** VOLTAGE CONTROLLED SWITCHES
+
+
+NAME         X_TRIAC1.X1.Striac      X_TRIAC1.X1.Striacr   
+MODEL        X_TRIAC1.X1.Vswitch     X_TRIAC1.X1.Vswitch   
+I LOAD       0.00E+00                0.00E+00             
+V LOAD       0.00E+00                0.00E+00             
+R LOAD       3.50E+04                3.50E+04             
+V CTRL      -1.59E-18               -1.59E-18             
+**** 05/15/24 19:09:22 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\felipe\Desktop\DEV\Circuitos Eltricos\Lab3\Lab3-3-v2.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    0.0000                       
+
+($N_0003)    0.0000                   (X_TRIAC1.X1.MT20)    0.0000              
+
+(X_TRIAC1.X1.MT21)    0.0000          (X_TRIAC1.X1.MT22)    0.0000              
+
+(X_TRIAC1.X1.MT23)    0.0000          (X_TRIAC1.X1.dlay1) 8.183E-24             
+
+(X_TRIAC1.X1.dlay2)-28.76E-24         (X_TRIAC1.X1.dvdt0)    0.0000             
+
+(X_TRIAC1.X1.dvdt1)    0.0000         (X_TRIAC1.X1.dvdt2)    0.0000             
+
+(X_TRIAC1.X1.gate1)    0.0000         (X_TRIAC1.X1.gate2)    0.0000             
+
+(X_TRIAC1.X1.main1)    0.0000         (X_TRIAC1.X1.main2)    0.0000             
+
+(X_TRIAC1.X1.main4)    1.0000         (X_TRIAC1.X1.cnhold)    0.0000            
+
+(X_TRIAC1.X1.cnmain)    0.0000        (X_TRIAC1.X1.cntrol)-1.587E-18            
+
+(X_TRIAC1.X1.contot)    0.0000        (X_TRIAC1.X1.dlayr1) 8.183E-24            
+
+(X_TRIAC1.X1.dlayr2)-28.76E-24        (X_TRIAC1.X1.main1r)    0.0000            
+
+(X_TRIAC1.X1.main2r)    0.0000        (X_TRIAC1.X1.cnholdr)    0.0000           
+
+(X_TRIAC1.X1.cnmainr)    0.0000       (X_TRIAC1.X1.cntrolr)-1.587E-18           
+
+(X_TRIAC1.X1.condvdt)    0.0000       (X_TRIAC1.X1.congate)    0.0000           
+
+(X_TRIAC1.X1.contotr)    0.0000       
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vac        0.000E+00
+    X_TRIAC1.X1.VIak   0.000E+00
+    X_TRIAC1.X1.VIka   0.000E+00
+    X_TRIAC1.X1.VdVdt   0.000E+00
+    X_TRIAC1.X1.VIgf   0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .64
+
