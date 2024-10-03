@@ -10,4 +10,3 @@
 
 # LINKS para a planilha do banco de dados e email, no qual recebe a confirmacao de contato
 ##### Planilha do banco de dados- https://docs.google.com/spreadsheets/d/1_cl7rkIJoNpE3hBlzzFMu8gKPSkhWVKMk0MBg-iijNU/edit?gid=0#gid=0</br>
-##### E-mail: pucbet2024@gmail.com</br>senha: PUCCAMP2024
