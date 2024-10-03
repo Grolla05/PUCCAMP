@@ -1,57 +1,237 @@
+@media (max-width: 768px) {
+    #sidebar {
+        left: 0; /* Alinha a barra lateral à esquerda em telas menores */
+        z-index: 1000; /* Assegure-se de que o z-index é alto o suficiente */
+
+    }
+}
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    padding-top: 100px; /* Adiciona espaço equivalente à altura do header */
+    background-color: #fafafa;
+    display: flex;
+    min-height: 100vh; /* Garante que o body ocupe pelo menos a altura total da tela */
+    flex-direction: column; /* Alinha os elementos verticalmente */
+    height: 100vh;
     margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    line-height: 1.6;
+    transition: background 0.2s linear;
 }
 
-.content {
-    transition: background-color 0.3s, color 0.3s;
+body.dark {
+    background: #222;
+    color: #fff;
+  }
+  
+  .checkbox {
+    opacity: 0;
+    position: absolute;
+  }
+  
+  .label {
+    background-color: #111;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    padding: 5px;
+    position: relative;
+    height: 26px;
+    width: 50px;
+    transform: scale(1.5);
+  
+  }
+  
+  
+  .label .ball {
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: 22px;
+    width: 22px;
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+  }
+  
+  .checkbox:checked + .label .ball {
+    transform: translateX(24px);
+  }
+  
+  .fa-moon {
+    color: #f1c40f;
+  }
+  
+  .fa-sun {
+    color: #f39c12;
+  }
+  
+
+/* Container para manter os botões no lado direito */
+.button-container {
+    font-family: 'Poppins', sans-serif; /* Fonte para botões */
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px; /* Adiciona espaço ao redor dos botões */
+    position: absolute; /* Posiciona o container de botões */
+    right: 0; /* Alinha o container à direita */
+    top: 5px; /* Alinha o container ao topo */
+    list-style-type: none; /* Remove o estilo de lista dos <li> */
 }
 
-/* Esconde o checkbox */
-.theme-toggle-checkbox {
-    display: none;
+/* Remove a formatação padrão de links */
+.button-container a {
+    font-family: 'Poppins', sans-serif; /* Fonte para botões */
+    text-decoration: none;
+    color: inherit;
+    display: block; /* O link ocupará todo o botão */
+    width: 100%;
+    height: 100%;
 }
 
-/* Estilos para o botão de troca de tema */
-.theme-toggle-label {
-    display: inline-block;
+
+/* Estilo do botão "Login" */
+#Login {
+    background-color: transparent; /* Sem fundo */
+    color: #ffffff; /* Texto branco */
+    border: none; /* Remove a borda */
+    margin: 0 5px; /* Espaço entre os botões */
     padding: 10px 20px;
+    border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito hover para o botão "Login" */
+#Login:hover {
+    background-color: #037; /* Azul-marinho mais claro ao passar o mouse */
+}
+
+/* Estilo do botão "Register" */
+#Register {
+    background-color: #00274e; /* Azul-marinho */
+    color: #ffffff; /* Texto branco */
     border: none;
-    background-color: #333;
-    color: white;
-    transition: background-color 0.3s;
+    margin: 0 5px; /* Espaço entre os botões */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.theme-toggle-label:hover {
-    background-color: #333;
+/* Efeito hover para o botão "Register" */
+#Register:hover {
+    background-color: #036; /* Azul-marinho mais claro ao passar o mouse */
 }
-
-/* Estilos para o tema escuro */
-.theme-toggle-checkbox:checked ~ .content {
-    background-color: #333;
-    color: white;
-}
-
 
 header {
-    background-color: #333;
+    background-color: #222;
     color: white;
+    text-align: center;
     padding: 10px 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    border-bottom: 7px solid #036; /* Adiciona uma linha de contorno azul na parte inferior */
+}
+
+/* Estilo existente da barra lateral esquerda */
+#sidebar {
+    background-color: #1d1d1d;
+    color: white;
+    width: 245px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    left: -250px; /* Oculta o menu por padrão */
+    transition: all 0.3s ease;
+    padding-top: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical */
+}
+
+#sidebar ul {
+    font-family: 'Roboto', sans-serif; /* Fontes para parágrafos e listas */
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Remove a margem padrão para evitar quebra de layout*/
+}
+
+#sidebar ul li {
+    font-family: 'Roboto', sans-serif; /* Fontes para parágrafos e listas */
+    padding: 10px;
     text-align: center;
 }
 
+#sidebar ul li a {
+    font-family: 'Roboto', sans-serif; /* Fontes para parágrafos e listas */
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    background-color: #037;
+}
+
+.separator {
+    border: none; /* Remove a borda padrão */
+    height: 1px; /* Define a altura da linha */
+    background-color: #ccc; /* Cor da linha (cinza) */
+    margin: 0; /* Remove margens */
+    width: 80%; /* Largura da linha */
+    margin-left: auto; /* Centraliza à direita */
+    margin-right: auto; /* Centraliza à esquerda */
+}
+
+.toggle-btn {
+    position: absolute;
+    top: 25px;
+    left: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#menu-toggle {
+    background-color: #222;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
 nav ul {
+    font-family: 'Roboto', sans-serif; /* Fontes para parágrafos e listas */
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 nav ul li {
+    font-family: 'Roboto', sans-serif; /* Fontes para parágrafos e listas */
     display: inline;
     margin-right: 15px;
 }
@@ -62,8 +242,11 @@ nav ul li a {
 }
 
 main {
+    font-family: 'Montserrat', sans-serif; /* Fontes para títulos */
     padding: 20px;
+    margin-left: 50px;
     text-align: center;
+    flex: 1; /* Ocupa o espaço restante */
 }
 
 main img {
@@ -75,19 +258,82 @@ main img {
 }
 
 footer {
-    background-color: #333;
+    background-color: #222;
     color: white;
     text-align: center;
     padding: 10px 0;
+    padding-left: 10px;
+    padding-right: 10px;
     position: fixed;
-    bottom: 0;
+    bottom: 0; /* Alinha o footer na parte inferior */
+    left: 0; /* Alinha o footer à esquerda */
+    right: 0; /* Alinha o footer à direita */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    border-top: 7px solid #036; /* Linha de contorno azul */
+    margin-top: 20px; /* Espaçamento para o conteúdo acima */
+    z-index: 1000; /* Coloca o footer acima de outros elementos */
+}
+
+.button-container-footer{
+    font-family: 'Poppins', sans-serif; /* Fonte para botões */
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px; /* Adiciona espaço ao redor dos botões */
+    position: absolute; /* Posiciona o container de botões */
+    right: 0; /* Alinha o container à direita */
+    top: 5px; /* Alinha o container ao topo */
+    list-style-type: none; /* Remove o estilo de lista dos <li> */
+}
+
+/* Remove a formatação padrão de links */
+.button-container-footer a {
+    font-family: 'Poppins', sans-serif; /* Fonte para botões */
+    text-decoration: none;
+    color: inherit;
+    display: block; /* O link ocupará todo o botão */
     width: 100%;
+    height: 100%;
 }
 
-h1, h2 {
-    margin-bottom: 20px;
+#Contate-nos{
+    background-color: #00274e; /* Azul-marinho */
+    color: #ffffff; /* Texto branco */
+    border: none;
+    margin: 0 5px; /* Espaço entre os botões */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-p {
-    margin-bottom: 20px;
+#Sobre-nos:hover {
+    background-color: #036; /* Azul-marinho mais claro ao passar o mouse */
+}
+
+#Sobre-nos {
+    background-color: transparent; /* Sem fundo */
+    color: #ffffff; /* Texto branco */
+    border: none;
+    margin: 0 5px; /* Espaço entre os botões */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#Contate-nos:hover {
+    background-color: #037; /* Azul-marinho mais claro ao passar o mouse */
+}
+
+.Lista_ROW1 {
+    display: flex;
+    justify-content: flex-start; /* Alinha os itens à esquerda */
+    padding: 20px;
+    font-size: 16px;
+    list-style-type: none; /*Remove o estilo de lista dos <li>*/
+    left: 0px; /* Alinha a lista à esquerda */
+    color: white; /* Texto branco */
+    height: auto; /* Altura automática */
 }
