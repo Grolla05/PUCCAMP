@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTATOOO</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "nxdKndKI9Xip3i_A8",
+            });
+        })();
+    </script>
+</head>
+
+<body>
+    <div class="form-container">
+        <h1>CONTATE-NOS</h1>
+        <form id="contactForm" method="POST" onsubmit="return handleSubmit(event);">
+            <div class="input-group" id="nome">
+                <input type="text" name="nome" placeholder="Digite seu Nome" required>
+            </div>
+            <div class="input-group" id="email">
+                <input type="email" name="email" placeholder="Digite um e-mail válido" required>
+            </div>
+            <div class="input-group" id="mensagem">
+                <textarea name="mensagem" rows="4" placeholder="Digite sua mensagem" required></textarea>
+            </div>
+            <button type="submit" onclick="sendMail()">ENVIAR</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
