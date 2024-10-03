@@ -1,36 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Poppins:wght@400;600&family=Roboto:wght@400;600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>Sobre Nos</title>
     <link rel="stylesheet" href="styless.css">
 </head>
 <body>
     <header>
+        <div>
+        </br>
+            <input type="checkbox" class="checkbox" id="chk" />
+            <label class="label" for="chk">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+                <div class="ball"></div>
+            </label>
+        </div>
         <div id="navegacao">
             <nav>
                 <ul>
-                    <li><a href="/home/felipe-grolla/Desktop/PUCCAMP/PI: Desenvolvimento Web/Projeto_integrador/Pages/home.html">Home</a></li>
-                    <li><a href="/home/felipe-grolla/Desktop/PUCCAMP/PI: Desenvolvimento Web/Projeto_integrador/Pages/about_us">Sobre Nos</a></li>
-                </ul>
+                    <li><a
+                            href="http://127.0.0.1:5500/PI:%20Desenvolvimento%20Web/Projeto_integrador/Pages/about_us.html">Sobre Nos</a>
+                    </li>
+
+                    <ul class="button-container">
+                        <li><button type="button" id="Login"><a
+                                    href="http://127.0.0.1:5500/PI:%20Desenvolvimento%20Web/Projeto_integrador/Pages/Login.html">Login</a></button>
+                        </li>
+                        <li><button type="button" id="Register"><a
+                                    href="http://127.0.0.1:5500/PI:%20Desenvolvimento%20Web/Projeto_integrador/Pages/Register.html">Register</a></button>
+                        </li>
+                    </ul>
+                
+                <button id="menu-toggle" class="toggle-btn">&#9776;</button>
             </nav>
         </div>
-        <div>
-            <input type="checkbox" class="checkbox" id="chk" />
-            <label class="label" for="chk">
-              <i class="fas fa-moon"></i>
-              <i class="fas fa-sun"></i>
-              <div class="ball"></div>
-            </label>
-          </div>
-      
-          <script src="script.js"></script>
-          <script src="https://kit.fontawesome.com/998c60ef77.js" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+        <script src="Script_Change_Theme.js"></script>
+        <script src="https://kit.fontawesome.com/998c60ef77.js" crossorigin="anonymous"></script>
     </header>
-    
+    <div id="sidebar">
+        <ul>
+            <li><a href="#">aaa</a></li>
+            <li><a href="#">aaa</a></li>
+            <li><a href="http://127.0.0.1:5500/PI:%20Desenvolvimento%20Web/Projeto_integrador/Pages/home.html">Home</a></li>
+            <li><a href="http://127.0.0.1:5500/PI:%20Desenvolvimento%20Web/Projeto_integrador/Pages/about_us.html">Sobre Nos</a></li>
+            <li><a href="#">Jogados Recentemente</a></li>
+            <hr class="separator">
+            <li><a href="#">Desenvolvimento WEB</a></li>
+            <li><a href="#">Calculo 1</a></li>
+            <li><a href="#">Robotica</a></li>
+            <li><a href="#">Organizacao</a></li>
+            <li><a href="#">Teologia</a></li>
+            <hr class="separator">
+            <li><a href="http://127.0.0.1:5500/PI:%20Desenvolvimento%20Web/Projeto_integrador/Pages/Contact.html">Central de Ajuda</a></li>
+        </ul>
+    </div>
+    <main>
+        <h1>Conteúdo Principal</h1>
+        <p>Aqui vai o conteúdo principal da página.</p>
+    </main>
+    <script src="script.js"></script>
 </body>
 <footer>
-    <p>Ⓒ 2024 PUC BET. Todos os direitos reservados</p>
+    <ul class="button-container-footer">
+        <li><button type="button" id="Sobre-nos"><a
+                    href="http://127.0.0.1:5500/PI:%20Desenvolvimento%20Web/Projeto_integrador/Pages/about_us.html">Sobre
+                    Nos</a></button></li>
+        <li><button type="button" id="Contate-nos"><a
+                    href="http://127.0.0.1:5500/PI:%20Desenvolvimento%20Web/Projeto_integrador/Pages/Contact.html">Central de Ajuda</a></button>
+        </li>
+    </ul>
+    <p>Contato para SAC: (11) 99999-9999</p>
+    <p>Ⓒ 2024 PUCBET. Todos os direitos reservados</p>
 </footer>
+
 </html>
