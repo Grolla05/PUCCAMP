@@ -1,3 +1,7 @@
+var nome = document.getElementById('nome').value;
+var email = document.getElementById('email').value;
+var mensagem = document.getElementById('mensagem').value;
+
 function salvar(nome, email, mensagem) {
   axios.post('https://sheetdb.io/api/v1/1v8ms934478ke', {
       "data": {
@@ -40,19 +44,19 @@ function handleSubmit(event) {
   form.reset();
 }
 
-function sendMail(nome, email, mensagem) {
-    var templateParams = {
-        nome: 'nome',
-        email: 'email',
-        mensagem: 'mensagem',
-      };
-      
-      emailjs.send('service_0kw0duf', 'template_lrp1cua', templateParams).then(
-        (response) => {
-          console.log('SUCCESS!', response.status, response.text);
-        },
-        (error) => {
-          console.log('FAILED...', error);
-        },
-      );
-}
+  function sendMail(nome, email, mensagem) {
+      var templateParams = {
+          nome: nome,
+          email: email,
+          mensagem: mensagem,
+        };
+        
+        emailjs.send('service_0kw0duf', 'template_lrp1cua', templateParams).then(
+          (response) => {
+            console.log('SUCCESS!', response.status, response.text);
+          },
+          (error) => {
+            console.log('FAILED...', error);
+          },
+        );
+  }
