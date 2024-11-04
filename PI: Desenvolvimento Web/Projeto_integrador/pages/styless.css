@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    padding-top: 100px; /* Adiciona espaço equivalente à altura do header */
+    background-color: #1F2840;
+    display: flex;
+    min-height: 100vh; /* Garante que o body ocupe pelo menos a altura total da tela */
+    flex-direction: column; /* Alinha os elementos verticalmente */
+    height: 100vh;
+    margin: 0;
+    transition: background 0.2s linear;
+} 
+
+/*Container para estilizar e manter a logo na esquerda logo apos o menu*/
+.Logo-Puc-Bet {
+    transform: scale(0.28); /* Reduz a imagem para 50% do tamanho original */    
+    display: flex;
+    justify-content: flex-end;
+    position: absolute; /* Posiciona o container de botões */
+    left: -120px; /* Alinha o container à esquerda */
+    top: -45px; /* Alinha o container ao topo */
+}
+
+/* Container para manter os botões no lado direito */
+.button-container-direita {
+    font-family: 'Poppins', sans-serif; /* Fonte para botões */
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px; /* Adiciona espaço ao redor dos botões */
+    position: absolute; /* Posiciona o container de botões */
+    right: 0; /* Alinha o container à direita */
+    top: 5px; /* Alinha o container ao topo */
+    transform: translateY(-10%); /* Ajuste para alinhar exatamente ao centro vertical */
+    list-style-type: none; /* Remove o estilo de lista dos <li> */
+}
+
+/* Remove a formatação padrão de links */
+.button-container-direita a {
+    font-family: 'Poppins', sans-serif; /* Fonte para botões */
+    text-decoration: none;
+    color: inherit;
+    display: block; /* O link ocupará todo o botão */
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilo do botão "Login" */
+#Login {
+    background-color: transparent; /* Sem fundo */
+    color: #ffffff; /* Texto branco */
+    border: none; /* Remove a borda */
+    margin: 0 5px; /* Espaço entre os botões */
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito hover para o botão "Login" */
+#Login:hover {
+    background-color: #037; /* Azul-marinho mais claro ao passar o mouse */
+}
+
+/* Estilo do botão "Register" */
+#Register {
+    background-color: #00274e; /* Azul-marinho */
+    color: #ffffff; /* Texto branco */
+    border: none;
+    margin: 0 5px; /* Espaço entre os botões */
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito hover para o botão "Register" */
+#Register:hover {
+    background-color: #037; /* Azul-marinho mais claro ao passar o mouse */
+}
+
+/* Container para manter os botões no lado esquerdo */
+.button-container-esquerda {
+    font-family: 'Poppins', sans-serif; /* Fonte para botões */
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px; /* Adiciona espaço ao redor dos botões */
+    position: absolute; /* Posiciona o container de botões */
+    left: 15%; /* Alinha o container à esquerda */
+    top: 5px; /* Alinha o container ao topo */
+    transform: translateY(-10%); /* Ajuste para alinhar exatamente ao centro vertical */
+    list-style-type: none; /* Remove o estilo de lista dos <li> */
+}
+
+/* Remove a formatação padrão de links */
+.button-container-esquerda a {
+    font-family: 'Poppins', sans-serif; /* Fonte para botões */
+    text-decoration: none;
+    color: inherit;
+    display: block; /* O link ocupará todo o botão */
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Estilo do botão "Cassino" */
+#Cassino {
+    background-color: transparent; /* Sem fundo */
+    color: #ffffff; /* Texto branco */
+    border: none; /* Remove a borda */
+    margin: 0 5px; /* Espaço entre os botões */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo do botão "Precisa-ajuda" */
+#Precisa-ajuda {
+    background-color: transparent; /* Azul-marinho */
+    color: #ffffff; /* Texto branco */
+    border: none;
+    margin: 0 5px; /* Espaço entre os botões */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+header {
+    background-color: #1F2840;
+    color: white;
+    text-align: center;
+    padding: 35px 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 2px solid #253C8E; /* Adiciona uma linha de contorno azul na parte inferior */
+}
+
+/* Estilo do conteúdo principal */
+#main-content {
+    margin-left: 20px;
+    padding: 20px;
+}
+
+#menu-toggle {
+    background-color: #222;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+nav ul {
+    font-family: 'Roboto', sans-serif; /* Fontes para parágrafos e listas */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    font-family: 'Roboto', sans-serif; /* Fontes para parágrafos e listas */
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    font-family: 'Montserrat', sans-serif; /* Fontes para títulos */
+    padding: 20px;
+    margin-left: 50px;
+    text-align: center;
+    flex: 1; /* Ocupa o espaço restante */
+}
+
+main img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #1F2840;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: fixed;
+    bottom: 0; /* Alinha o footer na parte inferior */
+    left: 0; /* Alinha o footer à esquerda */
+    right: 0; /* Alinha o footer à direita */
+    border-top: 2px solid #253C8E; /* Linha de contorno azul */
+    margin-top: 20px; /* Espaçamento para o conteúdo acima */
+    z-index: 1000; /* Coloca o footer acima de outros elementos */
+}
+
+.button-container-footer{
+    font-family: 'Poppins', sans-serif; /* Fonte para botões */
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px; /* Adiciona espaço ao redor dos botões */
+    position: absolute; /* Posiciona o container de botões */
+    right: 0; /* Alinha o container à direita */
+    top: 5px; /* Alinha o container ao topo */
+    list-style-type: none; /* Remove o estilo de lista dos <li> */
+}
+
+/* Remove a formatação padrão de links */
+.button-container-footer a {
+    font-family: 'Poppins', sans-serif; /* Fonte para botões */
+    text-decoration: none;
+    color: inherit;
+    display: block; /* O link ocupará todo o botão */
+    width: 100%;
+    height: 100%;
+}
+
+#Contate-nos{
+    background-color: #00274e; /* Azul-marinho */
+    color: #ffffff; /* Texto branco */
+    border: none;
+    margin: 0 5px; /* Espaço entre os botões */
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#Sobre-nos:hover {
+    background-color: #037; /* Azul-marinho mais claro ao passar o mouse */
+}
+
+#Sobre-nos {
+    background-color: transparent; /* Sem fundo */
+    color: #ffffff; /* Texto branco */
+    border: none;
+    margin: 0 5px; /* Espaço entre os botões */
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#Contate-nos:hover {
+    background-color: #037; /* Azul-marinho mais claro ao passar o mouse */
+}
+
+.Lista_ROW1 {
+    display: flex;
+    justify-content: flex-start; /* Alinha os itens à esquerda */
+    padding: 20px;
+    font-size: 16px;
+    list-style-type: none; /*Remove o estilo de lista dos <li>*/
+    left: 0px; /* Alinha a lista à esquerda */
+    color: white; /* Texto branco */
+    height: auto; /* Altura automática */
+}

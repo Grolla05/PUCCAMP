@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="styless_Register.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</head>
+<img alt="Logo.png"
+    src="https://github.com/Grolla05/PUCCAMP/blob/main/PI:%20Desenvolvimento%20Web/Projeto_integrador/source/Logo.png?raw=true"
+    data-hpc="true" class="Box-sc-g0xbh4-0 fzFXnm" />
+
+<body>
+    <div class="form-container">
+        <div>
+            <input type="checkbox" class="checkbox" id="chk" />
+            <label class="label" for="chk">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+                <div class="ball"></div>
+            </label>
+        </div>
+        <br>
+        <h1>CONTATE-NOS</h1>
+        <form id="contactForm" method="POST" onsubmit="return handleSubmit(event);">
+            <div class="input-group" id="nome">
+                <input type="text" name="nome" placeholder="Digite seu Nome" required>
+            </div>
+            <div class="input-group" id="email">
+                <input type="email" name="email" placeholder="Digite um e-mail válido" required>
+            </div>
+            <div class="input-group" id="mensagem">
+                <textarea name="mensagem" rows="4" placeholder="Digite sua duvida Aqui" required></textarea>
+            </div>
+            <button type="submit" onclick="sendMail('nome', 'email', '  ')">ENVIAR</button>
+        </form>
+    </div>
+    <script src="Script_Change_Theme.js"></script>
+    <script src="https://kit.fontawesome.com/998c60ef77.js" crossorigin="anonymous"></script>
+    <script src="Script_Suporte.js"></script>
+</body>
+
+</html>
